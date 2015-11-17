@@ -1,0 +1,412 @@
+*{
+    padding: 0;
+    margin: 0;          
+
+    font-size:120%;
+    font-family:Arial, "文泉驛正黑", "WenQuanYi Zen Hei", "儷黑 Pro", "LiHei Pro", "微軟正黑體", "Microsoft JhengHei", sans-serif;
+}
+.fill_window{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    min-height:calc( 94.6vw * 1.78);      
+}
+.main_div{
+    position:absolute;
+    top:10vh;
+    left:2.6vw;
+    right:2.6vw;
+    bottom:10vh;
+    min-width: 350px;
+}
+.fill_width{
+    width:100%;
+}
+.header{
+    position:absolute;
+    top: 0;
+}
+.footer{
+    position:absolute;
+    bottom:0;  
+    min-width: 100%;              
+}
+.center{               
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.bg_animation{
+    width:100%;
+    height:100%;
+    overflow: hidden;
+}
+
+#_welcome_logo_top{
+     width:53.72%;
+     /*56.55%;*/
+}
+#_welcome_logo_bottom{
+    width:95%;
+     
+}
+#_welcome_button{
+    background:url(../img/page_welcome/button_start.gif) no-repeat left top;
+    background-size: contain;
+    border:0;
+    width:37.62vw;
+    /*39.6vw;*/
+    height:36.195vw;
+    /*38.1vw;*/
+    margin-top:20px;
+}
+.upper_grass{
+    background:url(../img/page_welcome/grass_top.png) no-repeat left top;
+    background-size: 100% 100%;
+
+    border:0;
+    width:100%;
+    height:48.1vw; 
+}
+.upper_light{
+    background:url(../img/page_welcome/light_top.gif) no-repeat left top;
+    background-size: 100%;
+
+    border:0;
+    width:100%;
+    height:48.1vw; 
+}
+.lower_grass{
+    background:url(../img/page_welcome/grass_bottom.png) no-repeat left top;
+    background-size: 100% 100%;
+
+    border:0;
+    width:100%;
+    height:47.5vw; 
+}
+.lower_light{
+    background:url(../img/page_welcome/light_bottom.gif) no-repeat left top;
+    background-size: 100%;
+
+    border:0;
+    width:100%;
+    height:47.5vw; 
+}
+#_tree_ui_name{
+    position:absolute;
+    top:5%;
+    width:100%;
+}
+
+.name_label{
+    height:5.8%;
+    margin-top: 12%;
+    margin-bottom: 5%;
+}
+
+.name_lower{ 
+    background:url(../img/page_name/bg_front.png) no-repeat left top;
+    background-size: 100% 100%;
+    border:0; 
+
+    width:100%;
+    height:73.33vw;
+}
+#_common_foot_sub{    
+    position:absolute;
+    bottom:3.4vw;  
+    min-width: 100%;   
+}
+.common_lower{
+    background:url(../img/bg_descript.png) no-repeat left top;
+    background-size: 100% 100%;
+
+    border:0;
+    width:100%;
+    height:30.9vw; 
+}
+
+.button_descript{  
+
+    width:40.74vw;
+    height:12.5vw;
+
+    border:0; 
+    background-image:url(../img/button_next_enabled.png);
+    background-repeat:no-repeat;
+    background-position: left top;
+    background-size: contain;
+    background-color: transparent;        
+   
+}
+.button_descript.disabled{  
+
+    background-image:url(../img/button_next_disabled.png);
+   
+}
+
+.button_descript.page_final{  
+    background-image:url(../img/button_send.png);
+    transition: .5s ease-in-out;
+}
+.label_descript{
+    
+    border:0;
+    background-image:url(../img/page_name/descript.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    width:67vw;
+    height:13vw;
+    margin-top:2vw;
+}
+.label_descript.page_name{
+    background-image:url(../img/page_name/descript.png);
+    transition: .5s ease-in-out;
+}
+.label_descript.page_tree{
+    background-image:url(../img/page_tree/tree/descript.png);
+    transition: .5s ease-in-out;
+}
+.label_descript.page_topdeco{
+    background-image:url(../img/page_tree/topdeco/descript.png);
+    transition: .5s ease-in-out;
+}
+.label_descript.page_deco{
+    background-image:url(../img/page_tree/deco/descript.png);
+    transition: .5s ease-in-out;
+}
+.label_descript.page_word{
+    background-image:url(../img/page_word/descript.png);
+    transition: .5s ease-in-out;
+}
+.label_descript.page_final{
+    background-image:url(../img/page_final/descript.png);
+    transition: .5s ease-in-out;
+}
+.text_input{
+    width:66vw;
+    height:calc(66vw *0.244);
+    border:0;   
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    background-color: transparent;        
+
+    margin-top: 5vw;
+   
+    font-size:calc(66vw * 0.08);
+    color:rgb(147,148,152);
+    text-align: center;
+
+    font-weight: bold;
+}
+.text_input.name_input{
+    background-image:url(../img/input_bg_name_hint.png);
+}
+.text_input.word_input{
+    background-image:url(../img/input_bg_word_hint.png);
+     color:rgb(147,148,152);
+}
+.text_input.word_input.selected{
+    background-image:url(../img/input_selected.png);
+    color:rgb(255,255,255);
+}
+.text_input:focus{
+    background-image:url(../img/input_bg.png); 
+}
+.text_input:valid{
+    background-image:url(../img/input_bg.png);    
+}
+.text_input:read-only{
+    background-image:url(../img/input_bg.png);    
+}
+
+.top_logo{
+    margin:2%;
+    width:20%;
+}
+
+#_left_arrow{
+    position:absolute;
+    left:2%;
+    top:30%;
+
+    background:url(../img/page_tree/button_left.png) no-repeat left top;
+    background-size: contain;
+    border:0;
+
+    width:12vw;
+    height:14.42vw;
+}
+
+#_right_arrow{
+    position:absolute;
+    right:2%;
+    top:30%;
+    
+    background:url(../img/page_tree/button_right.png) no-repeat left top;
+    background-size: contain;
+    border:0;
+      
+    width:12vw;
+    height:14.42vw;
+}
+#_tree_ui_deco{
+    position:absolute;
+    right:2%;
+    top:3%;
+    width:16.52vw;
+}
+.deco_button{
+    background-repeat: no-repeat;
+    background-position: center;
+    border:0;
+      
+    width:12.5vw;
+    height:12.5vw;
+
+    margin-top: 2vw;
+
+   
+}
+.decobutton_1{        
+    background:url(../img/page_tree/deco/button_1_enable.png);   
+    background-size: 100%; 
+    transition: .5s ease-in-out;
+}
+.decobutton_1.select{        
+    background:url(../img/page_tree/deco/button_1_select.png);   
+    background-size: 100%; 
+    transition: .5s ease-in-out;
+}
+.decobutton_1.disable{        
+    background:url(../img/page_tree/deco/button_1_disable.png);   
+    background-size: 100%; 
+    transition: .5s ease-in-out;
+}
+
+.decobutton_2{        
+    background:url(../img/page_tree/deco/button_2_enable.png);
+    background-size: 100%;    
+    transition: .5s ease-in-out;
+}
+.decobutton_2.select{        
+    background:url(../img/page_tree/deco/button_2_select.png);   
+    background-size: 100%; 
+    transition: .5s ease-in-out;
+}
+.decobutton_2.disable{        
+    background:url(../img/page_tree/deco/button_2_disable.png);   
+    background-size: 100%; 
+    transition: .5s ease-in-out;
+}
+
+
+.decobutton_3{        
+    background:url(../img/page_tree/deco/button_3_enable.png);    
+    background-size: 100%;
+    transition: .5s ease-in-out;
+}
+.decobutton_3.select{        
+    background:url(../img/page_tree/deco/button_3_select.png);   
+    background-size: 100%; 
+    transition: .5s ease-in-out;
+}
+.decobutton_3.disable{        
+    background:url(../img/page_tree/deco/button_3_disable.png);   
+    background-size: 100%; 
+    transition: .5s ease-in-out;
+}
+
+.decobutton_4{        
+    background:url(../img/page_tree/deco/button_4_enable.png);    
+    background-size: 100%;
+    transition: .5s ease-in-out;
+}
+.decobutton_4.select{        
+    background:url(../img/page_tree/deco/button_4_select.png);   
+    background-size: 100%; 
+    transition: .5s ease-in-out;
+}
+.decobutton_4.disable{        
+    background:url(../img/page_tree/deco/button_4_disable.png);   
+    background-size: 100%; 
+    transition: .5s ease-in-out;
+}
+
+.decobutton_5{        
+    background:url(../img/page_tree/deco/button_5_enable.png);    
+    background-size: 100%;
+    transition: .5s ease-in-out;
+}
+.decobutton_5.select{        
+    background:url(../img/page_tree/deco/button_5_select.png);   
+    background-size: 100%; 
+    transition: .5s ease-in-out;
+}
+.decobutton_5.disable{        
+    background:url(../img/page_tree/deco/button_5_disable.png);   
+    background-size: 100%; 
+    transition: .5s ease-in-out;
+}
+
+#_tree_ui_word{
+    position:absolute;
+    top:20%;
+    width:100%;
+}
+#_tree_ui_final{
+    position:absolute;
+    top:20%;
+    width:100%;
+   
+}
+.countdown{
+    width:70.3vw;
+    height:70.3vw;
+
+    overflow: hidden;
+}
+
+.countdown_image{
+
+    position:absolute;
+    top:0;
+
+    background-image:url(../img/page_final/countdown.png);   
+    background-size: 100%; 
+    background-position: center;
+    background-color: transparent;
+    border:0;
+
+    width:70.3vw;
+    height:70.3vw;
+}
+#_countdown_time{
+
+    position: absolute;
+    top:28vw;
+
+    width:70.3vw;
+    height:28vw;
+
+}
+.countdown_notice{
+    background-image:url(../img/page_final/countdown_notice.png);       
+}
+
+.time_cell{
+    
+    text-align:center;
+    font-size: 24vw;
+    font-weight: bold;
+    color:#fff;
+}
+
+.spin_area{
+    
+}

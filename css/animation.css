@@ -1,0 +1,88 @@
+.hide_bg{
+   
+    visibility: hidden;
+    opacity: 0;    
+    transition: opacity .5s ease-in 1s, visibility .5s ease-in 1s;
+}
+
+.hide_bg.show_bg{
+
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .5s ease-in, visibility .5s ease-in;
+}
+
+.hide_page{
+   
+    visibility: hidden;
+    opacity: 0;    
+    transition: .5s ease-in;
+}
+
+.hide_page.show_page{
+
+    visibility: visible;
+    opacity: 1;
+    /*transition: opacity 1s ease-in-out 1s, visibility 1s ease-in-out 1s;*/
+    transition:.5s ease-in 1s;
+}
+.hide_page.show_page_delay{
+
+    visibility: visible;
+    opacity: 1;
+    /*transition: opacity 1s ease-in-out 1s, visibility 1s ease-in-out 1s;*/
+    transition:1s ease-in 2s;
+}
+
+.show_part{
+
+    visibility: visible;
+    opacity: 1;
+    transition:.5s ease-in-out .5s;
+}
+
+.show_part.hide_part{
+   
+    visibility: hidden;
+    opacity: 0;    
+    transition: .5s ease-in-out;
+}
+
+.hide_pop{
+   
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0);
+    transition: .3s ease-in-out .5s;
+}
+
+.hide_pop.show_pop{
+
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+    transition:.5s ease-in-out .5s;
+}
+
+.upper_element{
+	background-position: 0 -50vw;
+    transition: .5s ease-in-out 1s;
+}
+
+.upper_element.slide_in{
+	background-position: 0 0;
+	transition:.5s ease-in-out .5s;
+}
+
+.lower_element{
+	background-position: 0 50vw;
+    transition: .5s ease-in-out .5s;
+}
+.lower_element.slide_in{
+	background-position: 0 0;
+	transition:.5s ease-in-out .5s;
+}
+.lower_element.slide_in_long{
+	background-position: 0 0;
+	transition:1s ease-in-out .5s;
+}

@@ -1,0 +1,37 @@
+.welcome_bg{
+    background: -webkit-linear-gradient(left,rgb(118,197,163),rgb(184,222,211) 27%,rgb(181,221,210) 100%); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right,rgb(118,197,163),rgb(184,222,211) 27%,rgb(181,221,210) 100%); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right,rgb(118,197,163),rgb(184,222,211) 27%,rgb(181,221,210) 100%); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right,rgb(118,197,163),rgb(184,222,211) 27%,rgb(181,221,210) 100%); /* Standard syntax (must be last) */
+}
+.name_bg{
+    background: -webkit-linear-gradient(top,rgb(108,185,195),rgb(45,169,184)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom,rgb(108,185,195),rgb(45,169,184)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom,rgb(108,185,195),rgb(45,169,184)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom,rgb(108,185,195),rgb(45,169,184)); /* Standard syntax (must be last) */
+}
+.tree_bg{
+	background-color: rgb(15,117,188);
+	opacity: 0;    
+    transition: .5s ease-in-out;
+}
+.tree_bg.color_1{
+	background-color: rgb(15,117,188);
+	opacity: 1;    
+    transition: .5s ease-in-out;
+}
+.tree_bg.color_3{
+	background-color: rgb(212,113,104);
+	opacity: 1;    
+    transition: .5s ease-in-out;
+}
+.tree_bg.color_2{
+	background-color: rgb(0,61,126);
+	opacity: 1;    
+    transition: .5s ease-in-out;
+}
+.tree_bg.color_4{
+	background-color: rgb(130,0,52);
+	opacity: 1;    
+    transition: .5s ease-in-out;
+}

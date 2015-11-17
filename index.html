@@ -1,0 +1,128 @@
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>為你說出心裏祝福。eclipse 易口舒 無糖薄荷錠</title>
+
+        
+        <!-- JQUERY -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="css/page_style.css">
+        <link rel="stylesheet" type="text/css" href="css/bg_style.css">
+        <link rel="stylesheet" type="text/css" href="css/animation.css">
+        <link rel="stylesheet" type="text/css" href="css/tree_style.css">
+
+         <script src="js/spin.js" type="text/javascript"></script>
+       
+      
+        <script type="text/javascript" src="js/preload.js"></script>
+        <script type="text/javascript" src="js/page_action.js"></script>
+        <script type="text/javascript" src="js/tree_action.js"></script>
+        <script type="text/javascript" src="js/countdown.js"></script>
+        <script type="text/javascript" src="js/upload.js"></script>
+        
+
+    </head>
+    <body>
+
+        <audio id="_sound_clicked" src="sound/click_sound.wav"></audio>
+        <audio id="_sound_ok" src="sound/ok_sound.wav"></audio>
+        <audio id="_sound_error" src="sound/error_sound.wav"></audio>
+
+
+         <div id="_tree_page_bg" class="fill_window tree_bg">
+            <img src="img/bg_anim.gif" class="header bg_animation">
+            <div id="_tree_page" class="main_div hide_page">        
+                <div id="_tree_canvas" class="center tree_part"></div>
+                <div id="_topdeco_canvas" class="center topdeco_part"></div>
+                <div id="_deco_canvas" class="center">
+                    <div class="deco_group_1 deco_group" style="left:48%; top:25%"></div>
+                    <div class="deco_group_1 deco_group" style="left:45%; top:52%"></div>
+                    <div class="deco_group_1 deco_group" style="left:22%; top:65%"></div>
+                    <div class="deco_group_1 deco_group" style="left:55%; top:67%"></div>
+                 
+                    <div class="deco_group_2 deco_group" style="left:40%; top:35%"></div>
+                    <div class="deco_group_2 deco_group" style="left:60%; top:45%"></div>
+                    <div class="deco_group_2 deco_group" style="left:30%; top:55%"></div>
+                    <div class="deco_group_2 deco_group" style="left:70%; top:62%"></div>
+
+                    <div class="deco_group_3 deco_group" style="left:50%; top:40%"></div>
+                    <div class="deco_group_3 deco_group" style="left:35%; top:45%"></div>
+                    <div class="deco_group_3 deco_group" style="left:60%; top:55%"></div>
+                    <div class="deco_group_3 deco_group" style="left:40%; top:62%"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="_name_page_bg" class="name_bg fill_window hide_bg">
+            <img src="img/page_name/bg_anim.gif" class="header bg_animation">
+            <div id="_name_lower" class="name_lower footer lower_element"></div>           
+        </div>
+
+        <div id="_common_bg" class="fill_window hide_bg">
+           <div id="_common_top_sub">
+                <img src="img/logo.png" class="top_logo">                
+           </div>
+            <div id="_common_lower" class="common_lower footer lower_element"></div>
+            <div id="_common_foot_sub" class="hide_page">
+                <input type="button" id="_common_button" class="center button_descript" onclick="commonButtonClicked()">
+                <div id="_common_descript" class=" center label_descript"></div>
+            </div>
+        </div>
+        <div id="_tree_ui_name" class="hide_page">
+                <img src="img/page_name/label_from.png" class="name_label center">
+                <input type="text" id="_text_input_from" class="text_input name_input center" required="true" maxlength="10" oninput='checkTextInputLength("_text_input_from",10);'>
+                <img src="img/page_name/label_to.png" class="name_label center">
+                <input type="text" id="_text_input_to" class="text_input name_input center" required="true" maxlength="10" oninput='checkTextInputLength("_text_input_to",10);'>            
+        </div>
+        <div id="_tree_ui_arrow" class="hide_page">
+                <input type="button" id="_left_arrow" onclick="leftClicked()">                
+                <input type="button" id="_right_arrow" onclick="rightClicked()">  
+        </div>
+
+        <div id="_tree_ui_deco" class="hide_page">
+                <input type="button" id="_decobutton_1" class="deco_button decobutton_1" onclick="decoClicked(0)">                
+                <input type="button" id="_decobutton_2" class="deco_button decobutton_2" onclick="decoClicked(1)">                
+                <input type="button" id="_decobutton_3" class="deco_button decobutton_3" onclick="decoClicked(2)">                
+                <input type="button" id="_decobutton_4" class="deco_button decobutton_4" onclick="decoClicked(3)">                
+                <input type="button" id="_decobutton_5" class="deco_button decobutton_5" onclick="decoClicked(4)">                
+        </div>
+
+        <div id="_tree_ui_word" class="hide_page">
+                <input type="text" id="_word_input_1" class="text_input word_input center" required="true" readOnly="true" onclick="setSelectWord(0)" >
+                <input type="text" id="_word_input_2" class="text_input word_input center" required="true" readOnly="true" onclick="setSelectWord(1)">
+                <input type="text" id="_word_input_3" class="text_input word_input center" required="true" onclick="setSelectWord(2)" maxlength="20" oninput='checkTextInputLength("_word_input_3",20)'>                
+        </div>
+
+        <div id="_tree_ui_final" class="hide_page">
+                <!-- <img src="img/page_final/countdown.png" class="center"> -->
+                <div class="countdown center">
+                    <div id="_countdown_bg" class="countdown_image center hide_pop"></div>
+                    <div id="_countdown_time" class="time_cell hide_pop"></div>  
+                    <input type="button" id="_countdown_note" class="countdown_image countdown_notice center hide_pop" onclick="hideCountDown()"> 
+                </div>                                 
+        </div>
+
+        <div id="_welcome_page_bg" class="welcome_bg fill_window hide_bg">            
+            <div id="_upper_grass" class="upper_grass fill_width header upper_element"></div>
+            <div id="_upper_light" class="upper_light fill_width header upper_element"></div>
+            
+            <div id="_lower_grass" class="lower_grass fill_width footer lower_element"></div>
+            <div id="_lower_light" class="lower_light fill_width footer lower_element"></div>
+            
+            <div id="_welcome_page" class="main_div hide_page">        
+                <img src="img/page_welcome/logo_top.png" id="_welcome_logo_top" class="center">
+                <img src="img/page_welcome/logo_bottom.png" id="_welcome_logo_bottom" class="center">
+                
+                <input type="button" id="_welcome_button" class="center" onclick="goToNamePage()">
+                
+            </div>
+        </div>
+        
+        <span class="spin_area" id="spin_target"></span>
+
+       <script type="text/javascript" src="js/ga.js"></script>
+
+    </body>
+</html>
