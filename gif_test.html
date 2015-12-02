@@ -1,0 +1,24 @@
+<html>
+    <head> 
+    
+    <script type="text/javascript">
+	    function sendShare(){
+	    	var _url=encodeURIComponent("http://eclipse.artgital.com/test.gif");	
+			var _reurl=encodeURIComponent("http://www.facebook.com");	
+			var _share_url="https://www.facebook.com/dialog/share?app_id=1665501400358270&href="+_url
+							+"&redirect_uri="+_reurl
+							+"&caption=This%20is%20the%20caption"
+							+"&description=This%20is%20the%20description";
+			window.open(_share_url,'_blank');
+	    }
+    </script>
+
+    </head>
+    
+    <body>
+    
+    <button type="button" id="_send_button" onclick="sendShare()">share</button>
+    
+    </body>
+
+    </html>

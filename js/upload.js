@@ -75,6 +75,9 @@ function hideSpinner(){
 
 
 function goShareFacebook(){
-	var _url=encodeURIComponent("http://eclipse.artgital.com/eclipse/viewer/?tid="+TreeID+"&vName="+_video_name);
-	window.open("https://www.facebook.com/sharer/sharer.php?u="+_url,'_blank');
+	var _url=encodeURIComponent("http://eclipse.artgital.com/eclipse/viewer/sshares/"+_video_name);
+	var _reurl=encodeURIComponent("http://www.facebook.com");
+	//var _url=encodeURIComponent("http://eclipse.artgital.com/eclipse/viewer/?&tid="+TreeID+"&vName="+_video_name);
+	//window.open("https://www.facebook.com/sharer/sharer.php?u="+_url,'_blank');
+	window.open("https://www.facebook.com/dialog/share?app_id=1665501400358270&display=popup&href="+_url+"&redirect_uri="+_reurl,'_blank');
 }

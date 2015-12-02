@@ -1,38 +1,48 @@
-
+    
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>為你說出心裏祝福。eclipse 易口舒 無糖薄荷錠</title>
+        <title>eclipse 為你說出心裏祝福。</title>
 
+        
         
         <!-- JQUERY -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
-        <link rel="stylesheet" type="text/css" href="css/page_style.css">
-        <link rel="stylesheet" type="text/css" href="css/bg_style.css">
-        <link rel="stylesheet" type="text/css" href="css/animation.css">
-        <link rel="stylesheet" type="text/css" href="css/tree_style.css">
+        <script>document.cookie='resolution='+Math.max(screen.width,screen.height)+'; path=/';</script>
+        
+        
+        <link rel="stylesheet" type="text/css" href="../css/page_style.css">
+        <link rel="stylesheet" type="text/css" href="../css/bg_style.css">
+        <link rel="stylesheet" type="text/css" href="../css/animation.css">
+        <link rel="stylesheet" type="text/css" href="../css/tree_style.css">
 
-         <script src="js/spin.js" type="text/javascript"></script>
+        
+        <script src="../js/spin.js" type="text/javascript"></script>
        
-      
-        <script type="text/javascript" src="js/preload.js"></script>
-        <script type="text/javascript" src="js/page_action.js"></script>
-        <script type="text/javascript" src="js/tree_action.js"></script>
-        <script type="text/javascript" src="js/countdown.js"></script>
-        <script type="text/javascript" src="js/upload.js"></script>
+        <script src="page_info.js" type="text/javascript"></script>
+       
+        <script type="text/javascript" src="../js/preload.js"></script>
+        <script type="text/javascript" src="../js/page_action.js"></script>
+        <script type="text/javascript" src="../js/tree_action.js"></script>
+        <script type="text/javascript" src="../js/countdown.js"></script>
+        <script type="text/javascript" src="../js/upload.js"></script>
         
 
     </head>
     <body>
 
-        <audio id="_sound_clicked" src="sound/click_sound.wav"></audio>
-        <audio id="_sound_ok" src="sound/ok_sound.wav"></audio>
-        <audio id="_sound_error" src="sound/error_sound.wav"></audio>
+        <audio id="_sound_clicked" src="../sound/click_sound.wav"></audio>
+        <audio id="_sound_ok" src="../sound/ok_sound.wav"></audio>
+        <audio id="_sound_error" src="../sound/error_sound.wav"></audio>
 
 
          <div id="_tree_page_bg" class="fill_window tree_bg">
-            <img src="img/bg_anim.gif" class="header bg_animation">
+            <picture class="header bg_animation">
+                <source srcset="../img/bg_anim_xs.gif" media="(max-width:480px)">
+                <source srcset="../img/bg_anim_s.gif" media="(max-width:768px)">
+                <img srcset="../img/bg_anim.gif" >
+            </picture>
             <div id="_tree_page" class="main_div hide_page">        
                 <div id="_tree_canvas" class="center tree_part"></div>
                 <div id="_topdeco_canvas" class="center topdeco_part"></div>
@@ -56,13 +66,17 @@
         </div>
 
         <div id="_name_page_bg" class="name_bg fill_window hide_bg">
-            <img src="img/page_name/bg_anim.gif" class="header bg_animation">
+            <picture class="header bg_animation">
+                <source srcset="../img/page_name/bg_anim_xs.gif" media="(max-width:480px)">
+                <source srcset="../img/page_name/bg_anim_s.gif" media="(max-width:768px)">
+                <img srcset="../img/page_name/bg_anim.gif" >
+            </picture>
             <div id="_name_lower" class="name_lower footer lower_element"></div>           
         </div>
 
         <div id="_common_bg" class="fill_window hide_bg">
            <div id="_common_top_sub">
-                <img src="img/logo.png" class="top_logo">                
+                <img src="../img/logo.png" class="top_logo">                
            </div>
             <div id="_common_lower" class="common_lower footer lower_element"></div>
             <div id="_common_foot_sub" class="hide_page">
@@ -71,10 +85,10 @@
             </div>
         </div>
         <div id="_tree_ui_name" class="hide_page">
-                <img src="img/page_name/label_from.png" class="name_label center">
-                <input type="text" id="_text_input_from" class="text_input name_input center" required="true" maxlength="10" oninput='checkTextInputLength("_text_input_from",10);'>
-                <img src="img/page_name/label_to.png" class="name_label center">
-                <input type="text" id="_text_input_to" class="text_input name_input center" required="true" maxlength="10" oninput='checkTextInputLength("_text_input_to",10);'>            
+                <img src="../img/page_name/label_from.png" class="name_label center">
+                <input type="text" id="_text_input_from" class="text_input name_input center" required="true" maxlength="10" onchange='checkTextInputLength("_text_input_from",10);' autofocus autocomplete="name">
+                <img src="../img/page_name/label_to.png" class="name_label center">
+                <input type="text" id="_text_input_to" class="text_input name_input center" required="true" maxlength="10" onchange='checkTextInputLength("_text_input_to",10);'>            
         </div>
         <div id="_tree_ui_arrow" class="hide_page">
                 <input type="button" id="_left_arrow" onclick="leftClicked()">                
@@ -92,7 +106,7 @@
         <div id="_tree_ui_word" class="hide_page">
                 <input type="text" id="_word_input_1" class="text_input word_input center" required="true" readOnly="true" onclick="setSelectWord(0)" >
                 <input type="text" id="_word_input_2" class="text_input word_input center" required="true" readOnly="true" onclick="setSelectWord(1)">
-                <input type="text" id="_word_input_3" class="text_input word_input center" required="true" onclick="setSelectWord(2)" maxlength="20" oninput='checkTextInputLength("_word_input_3",20)'>                
+                <input type="text" id="_word_input_3" class="text_input word_input center" required="true" onclick="setSelectWord(2)" maxlength="20" onchange='checkTextInputLength("_word_input_3",20)'>                
         </div>
 
         <div id="_tree_ui_final" class="hide_page">
@@ -112,8 +126,8 @@
             <div id="_lower_light" class="lower_light fill_width footer lower_element"></div>
             
             <div id="_welcome_page" class="main_div hide_page">        
-                <img src="img/page_welcome/logo_top.png" id="_welcome_logo_top" class="center">
-                <img src="img/page_welcome/logo_bottom.png" id="_welcome_logo_bottom" class="center">
+                <img src="../img/page_welcome/logo_top.png" id="_welcome_logo_top" class="center">
+                <img src="../img/page_welcome/logo_bottom.png" id="_welcome_logo_bottom" class="center">
                 
                 <input type="button" id="_welcome_button" class="center" onclick="goToNamePage()">
                 
@@ -122,7 +136,7 @@
         
         <span class="spin_area" id="spin_target"></span>
 
-       <script type="text/javascript" src="js/ga.js"></script>
+       <!--<script type="text/javascript" src="../js/ga.js"></script>-->
 
     </body>
 </html>

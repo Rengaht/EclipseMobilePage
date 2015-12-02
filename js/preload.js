@@ -8,12 +8,12 @@ function preload(){
 }
 
 preload(
-    "img/page_tree/tree/tree_1.png",
- 	"img/page_tree/tree/tree_2.png",
- 	"img/page_tree/tree/tree_3.png",
- 	"img/page_tree/tree/tree_4.png",
- 	"img/page_tree/topdeco/topdeco_1.png",
- 	"img/page_tree/topdeco/topdeco_2.png",
- 	"img/page_tree/topdeco/topdeco_3.png",
- 	"img/page_tree/topdeco/topdeco_4.png"
+    "../img/page_tree/tree/tree_1.png",
+ 	"../img/page_tree/tree/tree_2.png",
+ 	"../img/page_tree/tree/tree_3.png",
+ 	"../img/page_tree/tree/tree_4.png",
+ 	"../img/page_tree/topdeco/topdeco_1.png",
+ 	"../img/page_tree/topdeco/topdeco_2.png",
+ 	"../img/page_tree/topdeco/topdeco_3.png",
+ 	"../img/page_tree/topdeco/topdeco_4.png"
 );

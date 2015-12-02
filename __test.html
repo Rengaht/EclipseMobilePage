@@ -1,0 +1,160 @@
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Test MobilePage</title>
+
+        
+        <!-- JQUERY -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+        <script src="js/spin.js" type="text/javascript"></script>
+        
+        <script type="text/javascript">
+            var _spinner;
+            var _mtree=[0,0,0,0,0];
+
+            var _crazy=false;
+            var _csend;
+            var name_default=['阿哲','阿華','阿銘','笑笑','阿宏','Stan','Ray','Leo','Jerry','阿航','小志','衫衫','郎郎','銓銓'];
+            var word_default=['因為有你 愛無極限！','有你我什麼都不怕！','你真是天使心來著！','我想閃耀你的每一天！',
+                              '你真的很大心！','我永遠挺你！','你的愛讓我飛上天！','你照亮我的世界！'];
+            window.onload = function(e){     
+                var opts = {
+                    scale: 12
+                    ,lines: 12 // The number of lines to draw
+                    , width: 4 // The line thickness
+                    , top: '50%' // Top position relative to parent
+                    , left: '50%' // Left position relative to parent
+                    , color: '#ffaad5' // #rgb or #rrggbb or array of colors
+                    , opacity: 0.25 // Opacity of the lines
+                }
+                _spinner=new Spinner(opts);              
+            };
+            function randomString(len, charSet) {
+                charSet = charSet || 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+                var randomString = '';
+                for (var i = 0; i < len; i++) {
+                    var randomPoz = Math.floor(Math.random() * charSet.length);
+                    randomString += charSet.substring(randomPoz,randomPoz+1);
+                }
+                return randomString;
+            }
+
+            function sendMultiTree(){
+                for(var i=0;i<5;++i){
+                    var check=document.getElementById("_check"+i.toString());
+                    if(check.checked){
+                        sendTree(i);
+                    }
+                }
+
+            }
+
+            function sendTree(MachineID){
+                var tree_str='';
+                for(var i=0;i<2;++i){
+                    var a=Math.floor(Math.random()*4);
+                    tree_str+=a.toString();
+                }
+                var tdeco=[-1,-1,-1];
+                for(var i=0;i<3;++i){
+                    tdeco[i]=Math.floor(Math.random()*5);               
+                    while(tdeco[i]==tdeco[(i+1)%3] || tdeco[i]==tdeco[(i+2)%3]){
+                        tdeco[i]=Math.floor(Math.random()*5);
+                    }
+                    tree_str+=tdeco[i].toString();
+                }
+                console.log(tree_str);
+
+                var ito=Math.floor(Math.random()*14);
+                var toname=name_default[ito];
+                
+                var ifrom=Math.floor(Math.random()*14);
+                while(ifrom==ito){
+                    ifrom=Math.floor(Math.random()*14);
+                }
+                var fromname=name_default[ifrom]+'_'+_mtree[MachineID];
+                //var fromname='T_'+_mtree[MachineID];
+
+                var phpcmd='http://eclipse.artgital.com/eclipse/s/eclipse.php?active=addTree'+
+                            '&mid='+MachineID.toString()+
+                            '&tcode='+tree_str+
+                            '&to='+toname+
+                            '&from='+fromname+
+                            '&message='+word_default[Math.floor(Math.random()*8)];
+                
+                //console.log(phpcmd);
+                showSpinner();
+                
+                _mtree[MachineID]++;
+
+
+                $.get(phpcmd,function(data){
+                   // console.log('>>> send tree: '+data);
+                    var m=MachineID;
+                    var to=toname;
+                    var from=fromname;
+                    var json=JSON.parse(data);
+                    if(json.result==1){
+                        document.getElementById("_output_text").innerHTML+='( m= '+m+' ,from= '+from+' ,to= '+to
+                                                                            +' ,id= '+json.tid+' ,time= '+parseInt(json.time)+' )</br>';
+                        
+                    }else{
+                        document.getElementById("_output_text").innerHTML+='FAIL!!!\n';
+                    }
+                    hideSpinner();
+
+                    // if(_crazy){
+                    //      var i=parseInt(document.getElementById('_send_time').value);
+                    //      if(i<=0) i=10;
+                    //      _csend=setTimeout(function(){sendMultiTree()},i*(1+Math.random()-.5));
+                    // }  
+                });         
+
+
+            }
+
+            function showSpinner(){
+                 var target=document.getElementById('spin_target');
+                _spinner.spin(target);
+            }
+            function hideSpinner(){
+                 _spinner.stop();   
+            }
+
+            function crazySend(){
+                if(!_crazy){
+                    var i=parseInt(document.getElementById('_send_time').value);
+                    if(i<=0) i=10;
+
+                    _csend=setInterval(function(){sendMultiTree()},i);
+                    _crazy=true;
+
+                    var b=document.getElementById("_crazy_button");
+                    b.innerHTML="Stop"
+                }else{
+                    clearInterval(_csend);
+                    _crazy=false;
+
+                    var b=document.getElementById("_crazy_button");
+                    b.innerHTML="Crazy Send"
+                }
+
+            }
+
+        </script>
+    </head>
+    <body>
+    <input type="checkbox" id="_check0">M0
+    <input type="checkbox" id="_check1">M1
+    <input type="checkbox" id="_check2">M2
+    <input type="checkbox" id="_check3">M3
+    <input type="checkbox" id="_check4">M4</br>
+    
+    <button type="button" id="_send_button" onclick="sendMultiTree()">Random Tree</button>
+    <button type="button" id="_crazy_button" onclick="crazySend()">Crazy Send</button>
+    Interval= <input type="text" id="_send_time" value="1000">
+    <p id="_output_text"></p>
+    </body>
+</html>

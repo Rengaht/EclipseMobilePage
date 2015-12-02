@@ -1,5 +1,5 @@
 
-var MachineID=0;
+
 var TreeID=-1;
 var CountTime=0;
 var VideoRequested=false;
@@ -21,16 +21,18 @@ var _video_name;
 
 window.onload = function(e){
      
+   // console.log("window on load");
 
     common_area=document.getElementById("_common_bg");
+
     showWelcomePage();
 
     cb_enable=false;
     VideoRequested=false;
 
     var opts = {
-        scale: 8 
-        ,lines: 6 // The number of lines to draw
+        scale: 12 
+        ,lines: 8 // The number of lines to draw
         , width: 6 // The line thickness
         , top: '50%' // Top position relative to parent
         , left: '50%' // Left position relative to parent
@@ -38,13 +40,17 @@ window.onload = function(e){
         , opacity: 0.25 // Opacity of the lines
     }
     _spinner=new Spinner(opts);
-  // showSpinner();
+    //showSpinner();
 
 };
 
 function showWelcomePage(){
+
+    //console.log("show _welcome_page");
+
     var bg=document.getElementById("_welcome_page_bg");    
     bg.classList.add("show_bg");
+    //console.log(bg.style.opacity);
 
     var page=document.getElementById("_welcome_page");    
     page.classList.add("show_page");
@@ -60,6 +66,7 @@ function showWelcomePage(){
     var upper_light=document.getElementById("_upper_light");
     upper_light.classList.add("slide_in");
 
+  //  console.log("finish show _welcome_page");
 }
 
 function goToNamePage(){
@@ -70,6 +77,8 @@ function goToNamePage(){
     this_bg.classList.remove("show_bg");
     this_bg.addEventListener("transitionend",showNamePage);
     this_bg.addEventListener("webkitTransitionEnd",showNamePage);
+    this_bg.addEventListener("mozTransitionEnd",showNamePage);
+    this_bg.addEventListener("oTransitionEnd",showNamePage);
 
     var this_page=document.getElementById("_welcome_page");    
     this_page.classList.remove("show_page");
@@ -87,9 +96,14 @@ function goToNamePage(){
 }
 function showNamePage(){
 
+   
     var this_bg=document.getElementById("_welcome_page_bg");    
     this_bg.removeEventListener("transitionend",showNamePage);
     this_bg.removeEventListener("webkitTransitionEnd",showNamePage);
+    this_bg.removeEventListener("mozTransitionEnd",showNamePage);
+    this_bg.removeEventListener("oTransitionEnd",showNamePage);
+    
+    this_bg.style.visibility="hidden";
 
     var next_bg=document.getElementById("_name_page_bg");    
     next_bg.classList.add("show_bg");
@@ -114,7 +128,9 @@ function showNamePage(){
     setCommonButtonEnable(false);
 
     arr_user_word=['','',''];
-    
+    document.getElementById("_text_input_from").value='';
+    document.getElementById("_text_input_to").value='';
+       
 }
 
 function commonButtonClicked(){
@@ -128,11 +144,10 @@ function commonButtonClicked(){
     switch(tree_step){
         case 0:
 
-            arr_user_word[0]=document.getElementById("_text_input_from").value;
-            arr_user_word[1]=document.getElementById("_text_input_to").value;            
+             // arr_user_word[0]=trimTextToLength(document.getElementById("_text_input_from").value,10);
+             // arr_user_word[1]=trimTextToLength(document.getElementById("_text_input_to").value,10);            
 
-            console.log(arr_user_word);
-
+            //console.log("arr_user_word"+arr_user_word.toString());
 
             goToTreePage();
             break;
@@ -146,11 +161,25 @@ function commonButtonClicked(){
             goToWordPage();
             break;
         case 4:
-            arr_user_word[2]=document.getElementById("_word_input_"+(iselected_word+1)).value;            
+            // arr_user_word[2]=trimTextToLength(document.getElementById("_word_input_"+(iselected_word+1)).value,20);            
 
-            console.log(arr_user_word);
+           // console.log("arr_user_word"+arr_user_word.toString());
+
+            if(arr_user_word[2]=='p_p'){
+                 setDeco(0,5);
+                 setDeco(1,6);
+                 setDeco(2,7);
+                 arr_user_word[2]='皮皮最愛你!';
+            }
+            if(arr_user_word[2]=='q_q'){
+                 setDeco(0,8);
+                 setDeco(1,8);
+                 setDeco(2,9);
+                 arr_user_word[2]='嘿嘿嘿聖誕快樂!';
+            }
+
             sendTree();
-           // goToFinalPage();
+           //goToFinalPage();
             break;
         case 5:
             sendVideoRequest();
@@ -167,6 +196,8 @@ function goToTreePage(){
     this_bg.classList.remove("show_bg");
     this_bg.addEventListener("transitionend",showTreePage);
     this_bg.addEventListener("webkitTransitionEnd",showTreePage);
+    this_bg.addEventListener("mozTransitionEnd",showTreePage);
+    this_bg.addEventListener("oTransitionEnd",showTreePage);
 
     var this_page=document.getElementById("_tree_ui_name");    
     this_page.classList.remove("show_page");
@@ -179,9 +210,14 @@ function goToTreePage(){
 }
 function showTreePage(){
 
+    
     var this_bg=document.getElementById("_name_page_bg");    
     this_bg.removeEventListener("transitionend",showTreePage);
     this_bg.removeEventListener("webkitTransitionEnd",showTreePage);
+    this_bg.removeEventListener("mozTransitionEnd",showTreePage);
+    this_bg.removeEventListener("oTransitionEnd",showTreePage);
+
+    this_bg.style.visibility="hidden";
 
     var next_bg=document.getElementById("_tree_page_bg");    
     next_bg.classList.add("color_1");
@@ -197,7 +233,7 @@ function showTreePage(){
     descript.classList.add("page_tree");
 
     
-    setCommonButtonEnable(true);
+    setCommonButtonEnable(false);
 
 }
 
@@ -251,6 +287,8 @@ function goToWordPage(){
     var input_2=document.getElementById("_word_input_2");
     input_2.value=word_default_2[arr_icur_tree[1]];
 
+    document.getElementById("_word_input_3").value='';
+
     setSelectWord(0);
 
 }
@@ -264,6 +302,8 @@ function goToFinalPage(){
     ui_page_2.classList.add("show_page");
     ui_page_2.addEventListener("transitionend",showCountDown);
     ui_page_2.addEventListener("webkitTransitionEnd",showCountDown);
+    ui_page_2.addEventListener("mozTransitionEnd",showCountDown);
+    ui_page_2.addEventListener("oTransitionEnd",showCountDown);
 
     var tree_page=document.getElementById("_tree_page");    
     tree_page.classList.add("show_page");
@@ -283,6 +323,8 @@ function showCountDown(){
     var ui_page_2=document.getElementById("_tree_ui_final");
     ui_page_2.removeEventListener("transitionend",showCountDown);
     ui_page_2.removeEventListener("webkitTransitionEnd",showCountDown);
+    ui_page_2.removeEventListener("mozTransitionEnd",showCountDown);
+    ui_page_2.removeEventListener("oTransitionEnd",showCountDown);
 
     startCountdown(CountTime);
 
@@ -315,6 +357,7 @@ function setSelectWord(_index){
         if(i==_index){
             //text.style.color="#ffffff";
             text.classList.add("selected");
+            arr_user_word[2]=trimTextToLength(document.getElementById("_word_input_"+(i+1)).value,20);   
         } 
         else{
             //text.style.color="#939498"  
@@ -327,6 +370,27 @@ function setSelectWord(_index){
     
 }
 
+function trimTextToLength(_str,_max_length){
+    var current_text=_str;
+    var current_length=current_text.length;
+    
+    var mhalf=0;
+    var i;
+    var output_text=current_text;
+
+    var mfull=0;
+    for(i=0;i<current_length;i++){
+        if(current_text.charCodeAt(i)>256) mfull++;
+        else mhalf++;
+        var total=mfull*2+mhalf;
+        if(total>=_max_length){
+            output_text=current_text.substring(0,i+1);
+            break;
+        }
+    }
+    return output_text;
+}
+
 function checkTextInputLength(_element_id,_max_length){
     var _element=document.getElementById(_element_id);
     var current_text=_element.value;
@@ -334,6 +398,8 @@ function checkTextInputLength(_element_id,_max_length){
     
     var mhalf=0;
     var i;
+
+    var output_text=current_text;
 
     var mfull=0;
     for(i=0;i<current_length;i++){
@@ -344,11 +410,16 @@ function checkTextInputLength(_element_id,_max_length){
         if(total>=_max_length){
             //alert("Exceed!"); 
             //console.log(current_text+'  '+total+' '+i);
-            _element.value=current_text.substring(0,i+1);
+            output_text=current_text.substring(0,i+1);
+            _element.value=output_text;
             break;
         }
     }
 
+    if(_element_id=='_text_input_from') arr_user_word[0]=trimTextToLength(output_text);
+    else if(_element_id=='_text_input_to') arr_user_word[1]=trimTextToLength(output_text);
+    else if(_element_id=='_word_input_3') arr_user_word[2]=trimTextToLength(output_text);
+    
     
     if(_max_length==10){
         if(checkInputEmpty('_text_input_from') && checkInputEmpty('_text_input_to')) setCommonButtonEnable(true);  
@@ -398,5 +469,18 @@ function setCommonButtonEnable(set_enable){
 
 }
 function enableCommonButton(){
-    setCommonButtonEnable(true);
+
+    if(tree_step==1||tree_step==2) 
+        setCommonButtonEnable(true);
+
+    // if(tree_step==1){
+    //     var _can=document.getElementById("_tree_canvas");   
+    //     _can.removeEventListener("transitionend",enableCommonButton);
+    //     _can.removeEventListener("webkitTransitionEnd",enableCommonButton);   
+    // }else if(tree_step==2){
+    //     var _can=document.getElementById("_topdeco_canvas");   
+    //     _can.removeEventListener("transitionend",enableCommonButton);
+    //     _can.removeEventListener("webkitTransitionEnd",enableCommonButton);   
+    // }
+
 }

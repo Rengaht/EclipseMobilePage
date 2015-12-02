@@ -26,6 +26,8 @@ function setTree(_index){
 
 	_can.addEventListener("transitionend",enableCommonButton);
     _can.addEventListener("webkitTransitionEnd",enableCommonButton);     
+    _can.addEventListener("mozTransitionEnd",enableCommonButton);     
+    _can.addEventListener("oTransitionEnd",enableCommonButton);     
 
     arr_icur_tree[0]=_index;
 }
@@ -38,6 +40,8 @@ function setTopdeco(_index){
 
 	_can.addEventListener("transitionend",enableCommonButton);
     _can.addEventListener("webkitTransitionEnd",enableCommonButton);  
+    _can.addEventListener("mozTransitionEnd",enableCommonButton);  
+    _can.addEventListener("oTransitionEnd",enableCommonButton);  
 
 	var next_bg=document.getElementById("_tree_page_bg");    
     next_bg.classList.remove("color_"+(arr_icur_tree[1]+1));
@@ -88,6 +92,8 @@ function moveTreeToTop(){
 
 	_topdeco.addEventListener("transitionend",initTreeTop);
     _topdeco.addEventListener("webkitTransitionEnd",initTreeTop);
+    _topdeco.addEventListener("mozTransitionEnd",initTreeTop);
+    _topdeco.addEventListener("oTransitionEnd",initTreeTop);
 
 }
 function initTreeTop(){
@@ -96,6 +102,8 @@ function initTreeTop(){
 	 var _topdeco=document.getElementById("_topdeco_canvas");
 	_topdeco.removeEventListener("transitionend",initTreeTop);
     _topdeco.removeEventListener("webkitTransitionEnd",initTreeTop);	
+    _topdeco.removeEventListener("mozTransitionEnd",initTreeTop);	
+    _topdeco.removeEventListener("oTransitionEnd",initTreeTop);	
 
     setCommonButtonEnable(true); 
 }
@@ -177,10 +185,23 @@ function setDeco(_igroup,_ideco){
 	
 
 }
+// function forceSetDeco(_igroup,_ideco){
+
+// 	var group=document.getElementsByClassName("deco_group_"+(_igroup+1));
+// 	for(var i=0;i<group.length;++i){
+// 		var deco=group[i];
+// 		deco.classList.remove("show_part_"+(arr_icur_tree[2+_igroup]+1));
+// 		if(_ideco>-1) deco.classList.add("show_part_"+(_ideco+1));
+// 	}
+// 	arr_icur_tree[2+_igroup]=_ideco;
+
+// }
 
 
 function setDecoButtonState(_ideco,_state){
 	
+	if(_ideco>4) return;
+
 	var button=document.getElementById("_decobutton_"+(_ideco+1));
 	switch(arr_decobutton_state[_ideco]){
 		case 0:

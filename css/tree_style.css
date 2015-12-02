@@ -20,56 +20,93 @@
     width:100%;  
     height:100%; 
 }
-/*.tree_part{
-    background-position:center;
-    background-size:70%;        
-}*/
-.tree_part.show_tree_1{
-    background:url(../img/page_tree/tree/tree_1.png);    
+.tree_part{
     background-position:center top;
-    background-size:70%;
-    transition:1s ease-in-out;
+    background-size:70%;        
+}
+.tree_part.show_tree_1{
+    background-image:url(../img/page_tree/tree/tree_1.png);    
+     background-color:rgba(1,0,0,0);
+
+    -webkit-transition:all 1s ease-in-out;
+    -o-transition:all 1s ease-in-out;
+    -moz-transition:all 1s ease-in-out;
+    transition:all 1s ease-in-out;
+    
+
 }
 .tree_part.show_tree_1.show_top{
     background-size:100%;
     background-position:center -100%;
-    transition:1s ease-in-out;
+ 
+    -webkit-transition:all 1s ease-in-out;
+    -o-transition:all 1s ease-in-out;
+    -moz-transition:all 1s ease-in-out;
+    transition:all 1s ease-in-out;
+    
 }
 
 .tree_part.show_tree_2{
-    background:url(../img/page_tree/tree/tree_2.png);
-    background-position:center top;
-    background-size:70%;
-    transition:1s ease-in-out;
+    background-image:url(../img/page_tree/tree/tree_2.png);
+     background-color:rgba(2,0,0,0);
+
+    -webkit-transition:all 1s ease-in-out;
+    -o-transition:all 1s ease-in-out;
+    -moz-transition:all 1s ease-in-out;
+    transition:all 1s ease-in-out;
+    
 }
 .tree_part.show_tree_2.show_top{
     background-position:center -100%;
     background-size:100%;
-    transition:1s ease-in-out;
+    
+    -webkit-transition:all 1s ease-in-out;
+    -o-transition:all 1s ease-in-out;
+    -moz-transition:all 1s ease-in-out;
+    transition:all 1s ease-in-out;
+    
 }
 
 .tree_part.show_tree_3{
-    background:url(../img/page_tree/tree/tree_3.png);
-    background-position:center top;
-    background-size:70%;
-    transition:1s ease-in-out;
+    background-image:url(../img/page_tree/tree/tree_3.png);
+     background-color:rgba(3,0,0,0);
+
+    -webkit-transition:all 1s ease-in-out;
+    -o-transition:all 1s ease-in-out;
+    -moz-transition:all 1s ease-in-out;
+    transition:all 1s ease-in-out;
+    
 }
 .tree_part.show_tree_3.show_top{
     background-position:center -100%;
     background-size:100%;
-    transition:1s ease-in-out;
+
+    -webkit-transition:all 1s ease-in-out;
+    -o-transition:all 1s ease-in-out;
+    -moz-transition:all 1s ease-in-out;
+    transition:all 1s ease-in-out;
+    
 }
 
 .tree_part.show_tree_4{
-    background:url(../img/page_tree/tree/tree_4.png);
-    background-position:center top;
-    background-size:70%;
-    transition:1s ease-in-out;
+    background-image:url(../img/page_tree/tree/tree_4.png);
+    background-color:rgba(4,0,0,0);
+
+    -webkit-transition:all 1s ease-in-out;
+    -o-transition:all 1s ease-in-out;
+    -moz-transition:all 1s ease-in-out;
+    transition:all 1s ease-in-out;
+    
 }
 .tree_part.show_tree_4.show_top{
     background-position:center -100%;
     background-size:100%;
-    transition:1s ease-in-out;
+    
+    -webkit-transition:all 1s ease-in-out;
+    -o-transition:all 1s ease-in-out;
+    -moz-transition:all 1s ease-in-out;
+    transition:all 1s ease-in-out;
+    
 }
 
 .topdeco_part{
@@ -80,56 +117,96 @@
 .topdeco_part.show_part{
     background-image:url(../img/page_tree/topdeco/topdeco_1.png);
     opacity: 1;
-    transition:.5s ease-in-out 1s;
+    
+    transition:all .5s ease-in-out 1s;
+    -webkit-transition:all .5s ease-in-out 1s;
+    -o-transition:all .5s ease-in-out 1s;
+    -moz-transition:all .5s ease-in-out 1s;
 }
 .topdeco_part.show_part.show_part_1{
     background-image:url(../img/page_tree/topdeco/topdeco_1.png);
-    transition:.5s ease-in-out;
+    background-color:rgba(1,0,0,0);
+
+    transition:all .5s ease-in-out;
+    -webkit-transition:all .5s ease-in-out;
+    -o-transition:all .5s ease-in-out 1s;
+    -moz-transition:all .5s ease-in-out 1s;    
 }
 .topdeco_part.show_part.show_part_1.show_plain{
     background-position:center top;
     background-size:70%;
-    transition:1s ease-in-out;
+    
+    transition:all 1s ease-in-out;
+    -webkit-transition:all 1s ease-in-out;
+    -o-transition:all 1s ease-in-out;
+    -moz-transition:all 1s ease-in-out;
 }
 
 .topdeco_part.show_part.show_part_2{
     background-image:url(../img/page_tree/topdeco/topdeco_2.png);
-    transition:.5s ease-in-out;
+     background-color:rgba(2,0,0,0);
+
+    transition:all .5s ease-in-out;
+    -webkit-transition:all .5s ease-in-out;
+    -o-transition:all .5s ease-in-out;
+    -moz-transition:all .5s ease-in-out;
 }
 .topdeco_part.show_part.show_part_2.show_plain{
     background-position:center top;
     background-size:70%;
-    transition:1s ease-in-out;
+    
+    transition:all 1s ease-in-out;
+    -webkit-transition:all 1s ease-in-out;
+    -o-transition:all 1s ease-in-out;
+    -moz-transition:all 1s ease-in-out;
 }
 
 .topdeco_part.show_part.show_part_3{
     background-image:url(../img/page_tree/topdeco/topdeco_3.png);
-    transition:.5s ease-in-out;
+     background-color:rgba(3,0,0,0);
+
+    transition:all .5s ease-in-out;
+    -webkit-transition:all .5s ease-in-out;
+    -o-transition:all .5s ease-in-out;
+    -moz-transition:all .5s ease-in-out;
+
 }
 .topdeco_part.show_part.show_part_3.show_plain{
     background-position:center top;
     background-size:70%;
-    transition:1s ease-in-out;
+    transition:all 1s ease-in-out;
+    -webkit-transition:all 1s ease-in-out;
+    -o-transition:all 1s ease-in-out;
+    -moz-transition:all 1s ease-in-out;
 }
 
 .topdeco_part.show_part.show_part_4{
     background-image:url(../img/page_tree/topdeco/topdeco_4.png);
-    transition:.5s ease-in-out;
+     background-color:rgba(4,0,0,0);
+
+    transition:all .5s ease-in-out;
+    -webkit-transition:all .5s ease-in-out;
+    -moz-transition:all .5s ease-in-out;
+    -o-transition:all .5s ease-in-out;
 }
 .topdeco_part.show_part.show_part_4.show_plain{
     background-position:center top;
     background-size:70%;
-    transition:1s ease-in-out;
+    transition:all 1s ease-in-out;
+    -webkit-transition:all 1s ease-in-out;
+    -moz-transition:all 1s ease-in-out;
+    -o-transition:all 1s ease-in-out;
 }
 
 .deco_group{
     position:absolute;
     border:0;
       
-    width:8vw;
-    height:8vw;    
+    width:10vw;
+    height:10vw;    
     opacity: 0;
     transition:.5s ease-in-out;   
+    -webkit-transition:.5s ease-in-out;   
 }
 .deco_group.show_part_1{
     background:url(../img/page_tree/deco/deco_1.gif);
@@ -137,33 +214,98 @@
     background-repeat: no-repeat;
     
     opacity: 1;    
-    transition:.5s ease-in-out;
+    transition:all .5s ease-in-out;
+    -webkit-transition:all .5s ease-in-out;
+    -moz-transition:all .5s ease-in-out;
+    -o-transition:all .5s ease-in-out;
 }
 .deco_group.show_part_2{
     background:url(../img/page_tree/deco/deco_2.gif);
     background-size: contain;
     background-repeat: no-repeat;
     opacity: 1;    
-    transition:.5s ease-in-out;
+    transition:all .5s ease-in-out;
+    -webkit-transition:all .5s ease-in-out;
+    -moz-transition:all .5s ease-in-out;
+    -o-transition:all .5s ease-in-out;
 }
 .deco_group.show_part_3{
     background:url(../img/page_tree/deco/deco_3.gif);
     background-size: contain;
     background-repeat: no-repeat;
     opacity: 1;    
-    transition:.5s ease-in-out;
+    transition:all .5s ease-in-out;
+    -webkit-transition:all .5s ease-in-out;
+    -moz-transition:all .5s ease-in-out;
+    -o-transition:all .5s ease-in-out;
 }
 .deco_group.show_part_4{
     background:url(../img/page_tree/deco/deco_4.gif);
     background-size: contain;
     background-repeat: no-repeat;
     opacity: 1;    
-    transition:.5s ease-in-out;
+    transition:all .5s ease-in-out;
+    -webkit-transition:all .5s ease-in-out;
+    -moz-transition:all .5s ease-in-out;
+    -o-transition:all .5s ease-in-out;
 }
 .deco_group.show_part_5{
     background:url(../img/page_tree/deco/deco_5.gif);
     background-size: contain;
     background-repeat: no-repeat;
     opacity: 1;    
-    transition:.5s ease-in-out;
+    transition:all .5s ease-in-out;
+    -webkit-transition:all .5s ease-in-out;
+    -moz-transition:all .5s ease-in-out;
+    -o-transition:all .5s ease-in-out;
+}
+.deco_group.show_part_6{
+    background:url(../img/page_tree/deco/deco_6.gif);
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 1;    
+    transition:all .5s ease-in-out;
+    -webkit-transition:all .5s ease-in-out;
+    -moz-transition:all .5s ease-in-out;
+    -o-transition:all .5s ease-in-out;
+}
+.deco_group.show_part_7{
+    background:url(../img/page_tree/deco/deco_7.gif);
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 1;    
+    transition:all .5s ease-in-out;
+    -webkit-transition:all .5s ease-in-out;
+    -moz-transition:all .5s ease-in-out;
+    -o-transition:all .5s ease-in-out;
+}
+.deco_group.show_part_8{
+    background:url(../img/page_tree/deco/deco_8.gif);
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 1;    
+    transition:all .5s ease-in-out;
+    -webkit-transition:all .5s ease-in-out;
+    -moz-transition:all .5s ease-in-out;
+    -o-transition:all .5s ease-in-out;
+}
+.deco_group.show_part_9{
+    background:url(../img/page_tree/deco/deco_9.gif);
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 1;    
+    transition:all .5s ease-in-out;
+    -webkit-transition:all .5s ease-in-out;
+    -moz-transition:all .5s ease-in-out;
+    -o-transition:all .5s ease-in-out;
+}
+.deco_group.show_part_10{
+    background:url(../img/page_tree/deco/deco_10.gif);
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 1;    
+    transition:all .5s ease-in-out;
+    -webkit-transition:all .5s ease-in-out;
+    -moz-transition:all .5s ease-in-out;
+    -o-transition:all .5s ease-in-out;
 }

@@ -14,24 +14,29 @@
 	background-color: rgb(15,117,188);
 	opacity: 0;    
     transition: .5s ease-in-out;
+    -webkit-transition:.5s ease-in-out;
 }
 .tree_bg.color_1{
 	background-color: rgb(15,117,188);
 	opacity: 1;    
     transition: .5s ease-in-out;
+    -webkit-transition:.5s ease-in-out;
 }
 .tree_bg.color_3{
 	background-color: rgb(212,113,104);
 	opacity: 1;    
     transition: .5s ease-in-out;
+    -webkit-transition:.5s ease-in-out;
 }
 .tree_bg.color_2{
 	background-color: rgb(0,61,126);
 	opacity: 1;    
     transition: .5s ease-in-out;
+    -webkit-transition:.5s ease-in-out;
 }
 .tree_bg.color_4{
 	background-color: rgb(130,0,52);
 	opacity: 1;    
     transition: .5s ease-in-out;
+    -webkit-transition:.5s ease-in-out;
 }

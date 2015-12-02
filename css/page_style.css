@@ -4,6 +4,10 @@
 
     font-size:120%;
     font-family:Arial, "文泉驛正黑", "WenQuanYi Zen Hei", "儷黑 Pro", "LiHei Pro", "微軟正黑體", "Microsoft JhengHei", sans-serif;
+
+    -webkit-appearance: none;
+    -webkit-focus-ring-color: none;
+    outline:none;
 }
 .fill_window{
     position: absolute;
@@ -166,26 +170,37 @@
 .label_descript.page_name{
     background-image:url(../img/page_name/descript.png);
     transition: .5s ease-in-out;
+    -webkit-transition:.5s ease-in-out;
 }
 .label_descript.page_tree{
     background-image:url(../img/page_tree/tree/descript.png);
     transition: .5s ease-in-out;
+    -webkit-transition:.5s ease-in-out;
 }
 .label_descript.page_topdeco{
     background-image:url(../img/page_tree/topdeco/descript.png);
     transition: .5s ease-in-out;
+    -webkit-transition:.5s ease-in-out;
 }
 .label_descript.page_deco{
     background-image:url(../img/page_tree/deco/descript.png);
     transition: .5s ease-in-out;
+    -webkit-transition:.5s ease-in-out;
 }
 .label_descript.page_word{
     background-image:url(../img/page_word/descript.png);
     transition: .5s ease-in-out;
+    -webkit-transition:.5s ease-in-out;
 }
 .label_descript.page_final{
     background-image:url(../img/page_final/descript.png);
     transition: .5s ease-in-out;
+    -webkit-transition:.5s ease-in-out;
+}
+input:invalid {
+    -moz-box-shadow: none;
+    box-shadow:none;
+
 }
 .text_input{
     width:66vw;
@@ -219,6 +234,10 @@
     background-image:url(../img/input_bg.png); 
 }
 .text_input:valid{
+    background-image:url(../img/input_bg.png);    
+}
+
+.text_input:-moz-read-only{
     background-image:url(../img/input_bg.png);    
 }
 .text_input:read-only{
@@ -277,32 +296,38 @@
     background:url(../img/page_tree/deco/button_1_enable.png);   
     background-size: 100%; 
     transition: .5s ease-in-out;
+    -webkit-transition:.5s ease-in-out;
 }
 .decobutton_1.select{        
     background:url(../img/page_tree/deco/button_1_select.png);   
     background-size: 100%; 
     transition: .5s ease-in-out;
+    -webkit-transition:.5s ease-in-out;
 }
 .decobutton_1.disable{        
     background:url(../img/page_tree/deco/button_1_disable.png);   
     background-size: 100%; 
     transition: .5s ease-in-out;
+    -webkit-transition:.5s ease-in-out;
 }
 
 .decobutton_2{        
     background:url(../img/page_tree/deco/button_2_enable.png);
     background-size: 100%;    
     transition: .5s ease-in-out;
+    -webkit-transition:.5s ease-in-out;
 }
 .decobutton_2.select{        
     background:url(../img/page_tree/deco/button_2_select.png);   
     background-size: 100%; 
     transition: .5s ease-in-out;
+    -webkit-transition:.5s ease-in-out;
 }
 .decobutton_2.disable{        
     background:url(../img/page_tree/deco/button_2_disable.png);   
     background-size: 100%; 
     transition: .5s ease-in-out;
+    -webkit-transition:.5s ease-in-out;
 }
 
 
@@ -310,48 +335,57 @@
     background:url(../img/page_tree/deco/button_3_enable.png);    
     background-size: 100%;
     transition: .5s ease-in-out;
+    -webkit-transition:.5s ease-in-out;
 }
 .decobutton_3.select{        
     background:url(../img/page_tree/deco/button_3_select.png);   
     background-size: 100%; 
     transition: .5s ease-in-out;
+    -webkit-transition:.5s ease-in-out;
 }
 .decobutton_3.disable{        
     background:url(../img/page_tree/deco/button_3_disable.png);   
     background-size: 100%; 
     transition: .5s ease-in-out;
+    -webkit-transition:.5s ease-in-out;
 }
 
 .decobutton_4{        
     background:url(../img/page_tree/deco/button_4_enable.png);    
     background-size: 100%;
     transition: .5s ease-in-out;
+    -webkit-transition:.5s ease-in-out;
 }
 .decobutton_4.select{        
     background:url(../img/page_tree/deco/button_4_select.png);   
     background-size: 100%; 
     transition: .5s ease-in-out;
+    -webkit-transition:.5s ease-in-out;
 }
 .decobutton_4.disable{        
     background:url(../img/page_tree/deco/button_4_disable.png);   
     background-size: 100%; 
     transition: .5s ease-in-out;
+    -webkit-transition:.5s ease-in-out;
 }
 
 .decobutton_5{        
     background:url(../img/page_tree/deco/button_5_enable.png);    
     background-size: 100%;
     transition: .5s ease-in-out;
+    -webkit-transition:.5s ease-in-out;
 }
 .decobutton_5.select{        
     background:url(../img/page_tree/deco/button_5_select.png);   
     background-size: 100%; 
     transition: .5s ease-in-out;
+    -webkit-transition:.5s ease-in-out;
 }
 .decobutton_5.disable{        
     background:url(../img/page_tree/deco/button_5_disable.png);   
     background-size: 100%; 
     transition: .5s ease-in-out;
+    -webkit-transition:.5s ease-in-out;
 }
 
 #_tree_ui_word{
